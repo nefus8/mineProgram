@@ -1,0 +1,31 @@
+print("Avez-vous bien placé la turtle dans le haut gauche de la salle à creuser ? (y/n)")
+reponse = read()
+ready = false
+
+if (reponse == "y" or reponse == "Y") then
+	print("Entrez la hauteur, puis la largeur, puis la longueur.")
+	hauteur = read()
+	print("hauteur = " + hauteur)
+	largeur = read()
+	print("largeur = " + largeur)
+	longueur = read()
+	print("longueur = " + longueur)
+	print("Tout est juste ? (y/n)")
+	juste = read()
+else then
+	print("Recommencez !")
+end
+
+if(juste) then 
+	print("Checking fuel level...")
+	fuelNeeded = largeur*longueur*hauteur
+	if (turtle.getFuelLevel() < fuelNeeded) then 
+		print("pas assez de fuel...")
+	else then
+		ready = true
+	end
+end
+
+if (ready) then
+	print("go")
+end
